@@ -53,8 +53,18 @@ docClient.query(params, function(err, data) {
         data.Items.forEach(function(item) {
             console.log(" -", item.year + ": " + item.title);
         });
+
+        var response = {
+            "statusCode": 200,
+            "headers": {
+                "my_header": "my_value"
+            },
+            "body": JSON.stringify(data.Items),
+            "isBase64Encoded": false
+        };
+        callback(null, response);
         
-        callback(null,  JSON.stringify(data.Items))
+      //  callback(null,  JSON.stringify(data.Items))
     }
 });
 
