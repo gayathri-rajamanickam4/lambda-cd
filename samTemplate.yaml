@@ -15,3 +15,15 @@ Resources:
           Properties:
             Path: /TimeResource1
             Method: GET
+  QueryParamFunctionGR:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: query-param.handler
+      Runtime: nodejs6.10
+      CodeUri: ./
+      Events:
+        QueryParamApiGR:
+          Type: Api
+          Properties:
+            Path: /Greeting
+            Method: GET
