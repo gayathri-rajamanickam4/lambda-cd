@@ -27,3 +27,15 @@ Resources:
           Properties:
             Path: /Greeting
             Method: GET
+  PathParamFunctionGR:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: path-param.handler
+      Runtime: nodejs6.10
+      CodeUri: ./
+      Events:
+        PathParamApiGR:
+          Type: Api
+          Properties:
+            Path: /products/{productname}
+            Method: GET
