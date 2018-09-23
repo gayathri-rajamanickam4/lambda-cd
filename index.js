@@ -31,7 +31,7 @@ exports.handler =  (event, context, callback) => {
     
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-console.log("Querying for movies from 1985.");
+console.log("Querying for movies from 1985 year .");
 
 var params = {
     TableName : "Movies",
