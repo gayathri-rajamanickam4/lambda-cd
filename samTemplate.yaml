@@ -8,7 +8,9 @@ Resources:
       Handler: index.handler
       Runtime: nodejs6.10
       CodeUri: ./
-      Policies: AmazonDynamoDBFullAccess
+      Policies:
+          - AmazonDynamoDBFullAccess
+          - AWSLambdaVPCAccessExecutionRole
       Events:
         MyTimeApi:
           Type: Api
